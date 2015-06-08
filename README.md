@@ -1,8 +1,6 @@
 
 # Apartment lab
 
-**DON'T LOOK AT THE SOLUTIONS**
-
 - Create a database called apartmentlab 
 - Using this database, create two tables, one for owners and one for properties
 - Keep this relationship in mind when designing your schema:
@@ -52,3 +50,7 @@ Bonus (this might require you to look up documentation online)
 1. In the properties table change the name of the column "name" to "property_name". 
 2. Count the total number of properties where the owner_id is between 1 and 3.
 ```
+
+###Submission
+
+[Gists](https://help.github.com/articles/about-gists/) are github's way of sharing code snippets that might not be a whole project. They're also great for creating tutorials that others can use as a reference. **Create a secret gist that includes your schema and your answers to each of the questions above.** The gist should be a plain text or [markdown](https://help.github.com/articles/markdown-basics/) file (but don't worry too much about making it pretty). For your homework submission, submit the link to your gist!
