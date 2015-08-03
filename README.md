@@ -216,4 +216,13 @@ In a <a href="https://help.github.com/articles/markdown-basics" target="_blank">
 **Note:** You may need to research documentation for these challenges.
 
 1. In the `properties` table, change the name of the column `name` to `property_name`.
+
+	```sql
+	ALTER TABLE properties RENAME COLUMN name TO property_name;
+	```
+
 2. Count the total number of properties where the `owner_id` is between 1 and 3.
+
+	```sql
+	SELECT COUNT(*) FROM properties WHERE owner_id BETWEEN 1 AND 3;
+	```
