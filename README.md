@@ -1,56 +1,57 @@
+# Apartment Lab (SQL Practice)
 
-# Apartment lab
+For these challenges, you'll be working with two tables, `owners` and `properties`. Keep this relationship in mind when designing your schema: **one owner can have many properties**.
 
-- Create a database called apartmentlab 
-- Using this database, create two tables, one for owners and one for properties
-- Keep this relationship in mind when designing your schema:
-	+ **One owner can have many properties**
+## Getting Started
 
-###Tables
+1. Create a database called `apartmentlab`.
+2. Using the `apartmentlab` database, create two tables, one for `owners` and one for `properties`. See the next section for schema specs.
 
-- The owners table should consist of: 
-	+ owner_id (this should be the primary key as well as a unique number that increments automatically)
-	+ name
-	+ age
-- The properties table should consist of:
-	+ property_id (this should be the primary key as well as a unique number that increments automatically)
-	+ name
-	+ number of units
-	+ owner_id (this should have the constraint NOT NULL)
-		+ There should be also be a foreign key that references the owners table
+## Schema
 
-###Questions
-Write down the following sql statements that are required to solve the following tasks.
+* The `owners` table should consist of:
+	* **id** (this should be the primary key as well as a unique number that increments automatically)
+	* **name**
+	* **age**
 
-```    
-1. Show all the tables.
-2. Show all the users. 
-3. Show all the data in the owners table.
-4. Show the names of all owners. 
-5. Show the ages of all of the owners in ascending order. 
-6. Show the name of an owner whose name is Donald. 
-7. Show the age of all owners who are older than 30. 
-8. Show the name of all owners whose name starts with an E. 
-9. Add an owner named John who is 33 years old to the owners table.
-10. Add an owner named Jane who is 43 years old to the owners table. 
-11. Change Jane's age to 30. 
-12. Change Jane's name to Janet. 
-13. Add a property named Archstone that has 20 units. 
-14. Delete the owner named Jane. 
-15. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5. 
-16. Count the total number of rows in the properties table.
-17. Show the highest age of all owners.
-18. Show the names of the first three owners in your owners table.
-19. Create a foreign key that references the owner_id in the owners table and forces the constraint ON DELETE NO ACTION. 
-20. Show all of the information from the owners table and the properties table in one joined table.  
-```
-Bonus (this might require you to look up documentation online)
+* The `properties` table should consist of:
+	* **id** (this should be the primary key as well as a unique number that increments automatically)
+	* **name**
+	* **num_units**
+	* **owner_id** (this should be a foreign key that references the owners table)
 
-```
-1. In the properties table change the name of the column "name" to "property_name". 
-2. Count the total number of properties where the owner_id is between 1 and 3.
-```
+## Challenges
 
-###Submission
+In a <a href="https://help.github.com/articles/markdown-basics" target="_blank">markdown</a> file, write the SQL statements required to solve the following tasks. Make sure to test your queries in the `psql` terminal! Remember you can type `\?` in the `psql` terminal for a list of commands.
 
-[Gists](https://help.github.com/articles/about-gists/) are github's way of sharing code snippets that might not be a whole project. They're also great for creating tutorials that others can use as a reference. **Create a secret gist that includes your schema and your answers to each of the questions above.** The gist should be a plain text or [markdown](https://help.github.com/articles/markdown-basics/) file (but don't worry too much about making it pretty). For your homework submission, submit the link to your gist!
+1. Show all the psql users. (**Hint:** Look for a command to show `roles`)
+2. Show all the tables in your `apartmentlab` database.
+3. Show all the data in the `owners` table.
+4. Add three owners: Donald (age 56), Elaine (age 24), and Emma (age 36).
+5. Show the names of all owners.
+6. Show the ages of all of the owners in ascending order.
+7. Show the name of an owner whose name is Donald.
+8. Show the age of all owners who are older than 30.
+9. Show the name of all owners whose name starts with an "E".
+10. Add an owner named John who is 33 years old.
+11. Add an owner named Jane who is 43 years old.
+12. Change Jane's age to 30.
+13. Change Jane's name to Janet.
+14. Delete the owner named Janet.
+15. Add a property named Archstone that has 20 units.
+16. Add two more properties with names and number of units of your choice.
+17. Show all of the properties in alphabetical order that are not named Archstone.
+18. Count the total number of rows in the properties table.
+19. Show the highest age of all the owners.
+20. Show the names of the first three owners in your owners table.
+21. Use a `FULL OUTER JOIN` to show all of the information from the owners table and the properties table.
+22. Update at least one of your properties to belong to the owner with id 1.
+23. Use an `INNER JOIN` to show all of the owners with associated properties.
+24. Use a `CROSS JOIN` to show all possible combinations of owners and properties.
+
+## Stretch Challenges
+
+**Note:** You may need to research documentation for these challenges.
+
+1. In the `properties` table, change the name of the column `name` to `property_name`.
+2. Count the total number of properties where the `owner_id` is between 1 and 3.
