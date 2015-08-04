@@ -45,7 +45,7 @@ INSERT INTO properties (name, num_units) VALUES ('Archstone', 20);
 INSERT INTO properties (name, num_units) VALUES ('Bearclaw', 3), ('Wilshire', 15);
 
 -- Show all of the properties in alphabetical order that are not named Archstone.
-SELECT * FROM properties WHERE name <> 'Archstone' ORDER BY name ASC;
+SELECT * FROM properties WHERE name <> 'Archstone' ORDER BY name DESC;
 
 -- Count the total number of rows in the properties table.
 SELECT COUNT(name) FROM properties;
@@ -68,5 +68,10 @@ SELECT * FROM owners INNER JOIN properties ON owners.id = properties.owner_id;
 -- Use a CROSS JOIN to show all possible combinations of owners and properties.
 SELECT * FROM owners CROSS JOIN properties;
 
+-- In the properties table, change the name of the column name to property_name.
+ALTER TABLE properties RENAME COLUMN name to property_name;
+
+-- Count the total number of properties where the owner_id is between 1 and 3.
+SELECT count(properties) FROM properties WHERE owner_id < 4;
 
 
